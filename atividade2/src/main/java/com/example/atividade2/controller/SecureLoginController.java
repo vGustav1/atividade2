@@ -15,6 +15,7 @@ import com.example.atividade2.service.UserService;
 @Controller
 public class SecureLoginController {
 
+    @SuppressWarnings("unused")
     private final UserConfig userConfig;
     private final SendEmailService sendEmailService;
     private final UserService userService;
@@ -69,10 +70,10 @@ public class SecureLoginController {
         }
 
         // Cria o usuário
-        userService.createUser(email, password);
+        userService.createUser(username, password);
 
-        System.out.println("Usuário cadastrado: " + email);
-        System.out.println("Nome: " + username);
+        System.out.println("Usuario Cadastrado: " + username);
+        System.out.println("Portador do email: " + email);
         System.out.println("Data do evento: " + eventDate);
 
         // Redireciona para o login
